@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Search"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:id="@+id/search_icon"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView">
+
+    </item>
+
+    <item
+        android:title="Map"
+        android:icon="@drawable/ic_baseline_map_24"
+        android:id="@+id/map_icon"
+        app:showAsAction="always">
+
+    </item>
+
+    <item
+        android:title="List View"
+        android:icon="@drawable/ic_baseline_view_list_24"
+        android:id="@+id/listview_icon"
+        app:showAsAction="always">
+
+    </item>
+
+</menu>
