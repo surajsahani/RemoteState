@@ -7,16 +7,20 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptor
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.martialcoder.api.TrucksDataService
 import com.martialcoder.model.Data
 import com.martialcoder.remotestate.R
 import com.martialcoder.remotestate.databinding.ActivityMapsBinding
+import com.martialcoder.repository.Repository
 import com.martialcoder.viewmodel.MainViewModel
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -27,7 +31,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_maps)
+
+        binding = ActivityMapsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        val repo = Repository(TrucksDataService)
+        viewModel = ViewModelProvider(this, ViewModelFactory(repo)).get(MainViewModel::class.java)
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+
+
+
     }
 
     override fun onMapReady(googleMap: GoogleMap) {

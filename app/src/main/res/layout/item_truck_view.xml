@@ -9,7 +9,13 @@
 
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:background="@color/white"
+    android:layout_marginVertical="@dimen/_10sdp"
+    android:layout_marginHorizontal="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_10sdp"
+    app:cardElevation="@dimen/_10sdp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -19,7 +25,10 @@
             android:id="@+id/truckNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/TruckMap_PinkColor2"
             android:text="@{model.truckNumber}"
+            android:layout_marginStart="@dimen/_12sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
         </TextView>
@@ -28,6 +37,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Stopped Since last 234 days"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
             app:layout_constraintStart_toStartOf="@id/truckNo"
             app:layout_constraintTop_toBottomOf="@id/truckNo"
             app:layout_constraintBottom_toBottomOf="parent">
@@ -36,6 +47,10 @@
             android:id="@+id/tructRunningStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:alpha="0.6"
+            android:textColor="@color/TruckMap_PinkColor2"
+            android:layout_marginEnd="@dimen/_5sdp"
             android:text="45623"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -45,6 +60,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="k/m"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:alpha="0.6"
+            android:layout_marginEnd="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tructRunningStatus">
         </TextView>
@@ -52,6 +70,9 @@
             android:id="@+id/tructkmNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:alpha="0.6"
+            android:textColor="@color/TruckMap_PinkColor2"
             app:layout_constraintTop_toTopOf="@+id/truckkm"
             app:layout_constraintEnd_toStartOf="@id/truckkm"
             app:layout_constraintBottom_toBottomOf="@id/truckkm">
